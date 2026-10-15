@@ -10,21 +10,38 @@
 
   <link href="./output.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-red-300">
 
-  <main>
+  <main class="flex flex-col items-center justify-center gap-10 px-6 pt-8 pb-32">
+    <h1 class="text-2xl font-medium text-white">IP Address Tracker</h1>
+    <form class="mx-auto flex w-full max-w-xl">
+      <input id="ip-search" type="text" class="ip-input" placeholder="Search for any IP address or domain">
+      <button type="submit" class="search-btn volume-btn" aria-label="Search">
+        <img src="./images/icon-arrow.svg" alt="Submit Form">
+      </button>
+    </form>
 
-    <h1>IP Address Tracker</h1>
-
-    <input type="text" placeholder="Search for any IP address or domain">
-
-    <section>
-      <div>IP Address</div>
-      <div>Location</div>
-      <div>Timezone</div>
-      <div>ISP</div>
+    <section class="address-container" aria-label="IP address details">
+      <dl class="address-cards">
+        <div class="address-detail">
+          <dt class="card-title">IP Address</dt>
+          <dd class="card-content"></dd>
+        </div>
+        <div class="address-detail">
+          <dt class="card-title">Location</dt>
+          <dd class="card-content"></dd>
+        </div>
+        <div class="address-detail">
+          <dt class="card-title">Timezone</dt>
+          <dd class="card-content">UTC</dd>
+        </div>
+        <div class="address-detail">
+          <dt class="card-title">ISP</dt>
+          <dd class="card-content"></dd>
+        </div>
+      </dl>
     </section>
-    
+
   </main>
   
 </body>

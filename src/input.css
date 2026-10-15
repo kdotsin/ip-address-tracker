@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+@layer components {
+  .address-container {
+    @apply mx-auto w-full max-w-4xl rounded-2xl bg-white p-6 shadow-lg;
+  }
+
+  .address-cards {
+    @apply flex flex-col gap-4 md:flex-row md:divide-x md:divide-gray-300;
+  }
+
+  .address-detail {
+    @apply flex-1 md:px-6;
+  }
+
+  .card-title {
+    @apply text-xs tracking-widest text-gray-400;
+  }
+
+  .card-content {
+    @apply text-xl font-bold;
+  }
+
+  .ip-input {
+    @apply flex-1 rounded-l-2xl bg-white px-5 py-3 text-sm outline-none placeholder:text-gray-400;
+  }
+  
+  .search-btn {
+    @apply rounded-r-2xl bg-black px-5
+  }
+
+  .volume-btn {
+    @apply cursor-pointer rounded-r-2xl bg-black px-5;
+  }
+}
