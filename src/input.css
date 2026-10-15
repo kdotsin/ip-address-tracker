@@ -30,6 +30,6 @@
   }
 
   .bg-img {
-    @apply relative bg-cover bg-[url('./images/pattern-bg-mobile.png')] md:bg-[url('./images/pattern-bg-desktop.png')];
+    @apply relative bg-cover md:bg-size-[100%_235px] md:bg-no-repeat bg-[url('./images/pattern-bg-mobile.png')] md:bg-[url('./images/pattern-bg-desktop.png')];
   }
 }
