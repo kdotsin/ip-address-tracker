@@ -26,10 +26,10 @@
   }
   
   .search-btn {
-    @apply rounded-r-2xl bg-black px-5
+    @apply rounded-r-2xl bg-black px-5 cursor-pointer rounded-r-2xl bg-black px-5;
   }
 
-  .volume-btn {
-    @apply cursor-pointer rounded-r-2xl bg-black px-5;
+  .bg-img {
+    @apply relative bg-cover bg-[url('./images/pattern-bg-mobile.png')] md:bg-[url('./images/pattern-bg-desktop.png')];
   }
 }
