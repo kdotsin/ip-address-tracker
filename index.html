@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>IP Address Tracker</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .address-container {
+          @apply mx-auto w-full max-w-4xl rounded-2xl bg-white p-6 shadow-lg;
+        }
+
+        .address-cards {
+          @apply flex flex-col gap-4 md:flex-row md:divide-x md:divide-gray-300;
+        }
+
+        .address-detail {
+          @apply flex-1 md:px-6;
+        }
+
+        .card-title {
+          @apply text-xs tracking-widest text-gray-400;
+        }
+
+        .card-content {
+          @apply text-xl font-bold;
+        }
+
+        .ip-input {
+          @apply flex-1 rounded-l-2xl bg-white px-5 py-3 text-sm outline-none placeholder:text-gray-400;
+        }
+
+        .search-btn {
+          @apply rounded-r-2xl bg-black px-5 cursor-pointer rounded-r-2xl bg-black px-5;
+        }
+
+        .bg-img {
+          @apply relative bg-cover md:bg-size-[100%_235px] md:bg-no-repeat bg-[url('./src/images/pattern-bg-mobile.png')] md:bg-[url('./src/images/pattern-bg-desktop.png')];
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="flex flex-col items-center justify-center gap-10 px-6 pt-8 pb-32 bg-img"
+    >
+      <h1 class="text-2xl font-medium text-white">IP Address Tracker</h1>
+      <form class="mx-auto flex w-full max-w-xl">
+        <input
+          id="ip-search"
+          type="text"
+          class="ip-input"
+          placeholder="Search for any IP address or domain"
+        />
+        <button type="submit" class="search-btn volume-btn" aria-label="Search">
+          <img src="./src/images/icon-arrow.svg" alt="Submit Form" />
+        </button>
+      </form>
+
+      <section class="address-container" aria-label="IP address details">
+        <dl class="address-cards">
+          <div class="address-detail">
+            <dt class="card-title">IP Address</dt>
+            <dd class="card-content"></dd>
+          </div>
+          <div class="address-detail">
+            <dt class="card-title">Location</dt>
+            <dd class="card-content"></dd>
+          </div>
+          <div class="address-detail">
+            <dt class="card-title">Timezone</dt>
+            <dd class="card-content">UTC</dd>
+          </div>
+          <div class="address-detail">
+            <dt class="card-title">ISP</dt>
+            <dd class="card-content"></dd>
+          </div>
+        </dl>
+      </section>
+    </header>
+    <main id="map"></main>
+  </body>
+</html>
