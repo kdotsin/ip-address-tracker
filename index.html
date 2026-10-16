@@ -42,6 +42,9 @@
         }
       }
     </style>
+
+    <script type="module" src="./dist/index.js"></script>
+
   </head>
   <body>
     <header
@@ -64,19 +67,19 @@
         <dl class="address-cards">
           <div class="address-detail">
             <dt class="card-title">IP Address</dt>
-            <dd class="card-content"></dd>
+            <dd class="card-content" id="ip-address"></dd>
           </div>
           <div class="address-detail">
             <dt class="card-title">Location</dt>
-            <dd class="card-content"></dd>
+            <dd class="card-content" id="ip-location"></dd>
           </div>
           <div class="address-detail">
             <dt class="card-title">Timezone</dt>
-            <dd class="card-content">UTC</dd>
+            <dd class="card-content" id="ip-timezone">UTC</dd>
           </div>
           <div class="address-detail">
             <dt class="card-title">ISP</dt>
-            <dd class="card-content"></dd>
+            <dd class="card-content" id="ip-isp"></dd>
           </div>
         </dl>
       </section>
