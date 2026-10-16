@@ -8,6 +8,9 @@ const showLocation = document.querySelector("#ip-location")!;
 const showTimezone = document.querySelector("#ip-timezone")!;
 const showIsp = document.querySelector("#ip-isp")!;
 
+var map = L.map('map').setView([40.7767, -73.9713], 13);
+var pin = L.marker([40.7767, -73.9713]).addTo(map);
+
 ipSearch.addEventListener("submit", async (e) => {
   e.preventDefault();
   try {
@@ -23,14 +26,24 @@ ipSearch.addEventListener("submit", async (e) => {
       return;
     }
     const ip = await getIpInfo(ipInput.value);
+
     showAddress.textContent = ip.ip;
     showLocation.textContent = `${ip.location.city}, ${ip.location.region} ${ip.location.postalCode}`;
     showTimezone.textContent = `UTC ${ip.location.timezone}`;
     showIsp.textContent = ip.isp;
+
+    map.setView([ip.location.lat, ip.location.lng], 13);
+    pin.setLatLng([ip.location.lat, ip.location.lng])
+
   } catch (error) {
     throw Error("Not Found");
   }
 });
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
 function isValidIp(input: string): boolean {
   const parts = input.split(".");

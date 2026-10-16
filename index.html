@@ -10,7 +10,7 @@
     <style type="text/tailwindcss">
       @layer components {
         .address-container {
-          @apply mx-auto w-full max-w-4xl rounded-2xl bg-white p-6 shadow-lg;
+          @apply mx-auto max-w-4xl rounded-2xl bg-white p-6 shadow-lg;
         }
 
         .address-cards {
@@ -38,7 +38,7 @@
         }
 
         .bg-img {
-          @apply relative bg-cover md:bg-size-[100%_235px] md:bg-no-repeat bg-[url('./src/images/pattern-bg-mobile.png')] md:bg-[url('./src/images/pattern-bg-desktop.png')];
+          @apply relative bg-cover md:bg-size-[100%_220px] md:bg-no-repeat bg-[url('./src/images/pattern-bg-mobile.png')] md:bg-[url('./src/images/pattern-bg-desktop.png')];
         }
       }
     </style>
@@ -57,9 +57,9 @@
 
     <script type="module" src="./dist/index.js" defer></script>
   </head>
-  <body>
+  <body class="flex min-h-screen flex-col">
     <header
-      class="flex flex-col items-center justify-center gap-10 px-6 pt-8 pb-32 bg-img"
+      class="flex h-80 flex-col items-center gap-10 px-6 pt-8 bg-img md:h-[220px]"
     >
       <h1 class="text-2xl font-medium text-white">IP Address Tracker</h1>
       <form class="mx-auto flex w-full max-w-xl" id="ip-search">
@@ -74,7 +74,7 @@
         </button>
       </form>
 
-      <section class="address-container" aria-label="IP address details">
+      <section class="address-container absolute inset-x-6 bottom-0 z-10 translate-y-1/2" aria-label="IP address details">
         <dl class="address-cards">
           <div class="address-detail">
             <dt class="card-title">IP Address</dt>
@@ -95,6 +95,6 @@
         </dl>
       </section>
     </header>
-    <main id="map"></main>
+    <main id="map" class="relative z-0 flex-1"></main>
   </body>
 </html>
