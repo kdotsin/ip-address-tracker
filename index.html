@@ -43,17 +43,28 @@
       }
     </style>
 
-    <script type="module" src="./dist/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
 
+    <script type="module" src="./dist/index.js" defer></script>
   </head>
   <body>
     <header
       class="flex flex-col items-center justify-center gap-10 px-6 pt-8 pb-32 bg-img"
     >
       <h1 class="text-2xl font-medium text-white">IP Address Tracker</h1>
-      <form class="mx-auto flex w-full max-w-xl">
+      <form class="mx-auto flex w-full max-w-xl" id="ip-search">
         <input
-          id="ip-search"
+          id="ip-input"
           type="text"
           class="ip-input"
           placeholder="Search for any IP address or domain"
@@ -75,7 +86,7 @@
           </div>
           <div class="address-detail">
             <dt class="card-title">Timezone</dt>
-            <dd class="card-content" id="ip-timezone">UTC</dd>
+            <dd class="card-content" id="ip-timezone"></dd>
           </div>
           <div class="address-detail">
             <dt class="card-title">ISP</dt>
